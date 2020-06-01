@@ -1,0 +1,29 @@
+Command line:
+   CS303_ERDEM_YILDIZ_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50589
+
+Tue Dec 17 18:13:48 2019
+
+
+ Elaboration Time: 0.0625 sec
+
+ Current Memory Usage: 5165.82 Meg
+
+ Total Signals          : 19
+ Total Nets             : 58
+ Total Signal Drivers   : 10
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 15
+ Total Traceable Variables  : 40
+ Total Scalar Nets and Variables : 265
+Total Line Count : 324
+
+ Total Simulation Time: 0.109375 sec
+
+ Current Memory Usage: 5165.82 Meg
+
+Tue Dec 17 18:13:53 2019
+

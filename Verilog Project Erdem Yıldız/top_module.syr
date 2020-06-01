@@ -1,0 +1,661 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: top_module.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top_module.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top_module"
+Output Format                      : NGC
+Target Device                      : xc3s100e-4-tq144
+
+---- Source Options
+Top Module Name                    : top_module
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "ssd.v" in library work
+Compiling verilog file "debouncer.v" in library work
+Module <ssd> compiled
+Compiling verilog file "CS303_ERDEM_YILDIZ.v" in library work
+Module <debouncer> compiled
+Compiling verilog file "clk_divider.v" in library work
+Module <atm> compiled
+Compiling verilog file "top_module.v" in library work
+Module <clk_divider> compiled
+Module <top_module> compiled
+No errors in compilation
+Analysis of file <"top_module.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top_module> in library <work>.
+
+Analyzing hierarchy for module <clk_divider> in library <work> with parameters.
+	toggle_value = "00000000000010011000100101101000"
+
+Analyzing hierarchy for module <debouncer> in library <work>.
+
+Analyzing hierarchy for module <ssd> in library <work>.
+
+Analyzing hierarchy for module <atm> in library <work> with parameters.
+	ATM_MENU = "0101"
+	IDLE = "0000"
+	LOCK = "0100"
+	MONEY = "0110"
+	PASS_CHG_1 = "1010"
+	PASS_CHG_2 = "1001"
+	PASS_CHG_3 = "1000"
+	PASS_ENT_1 = "0011"
+	PASS_ENT_2 = "0010"
+	PASS_ENT_3 = "0001"
+	PASS_NEW = "1011"
+	WARNING = "0111"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top_module>.
+Module <top_module> is correct for synthesis.
+ 
+Analyzing module <clk_divider> in library <work>.
+	toggle_value = 32'sb00000000000010011000100101101000
+Module <clk_divider> is correct for synthesis.
+ 
+Analyzing module <debouncer> in library <work>.
+Module <debouncer> is correct for synthesis.
+ 
+Analyzing module <ssd> in library <work>.
+Module <ssd> is correct for synthesis.
+ 
+Analyzing module <atm> in library <work>.
+	ATM_MENU = 4'b0101
+	IDLE = 4'b0000
+	LOCK = 4'b0100
+	MONEY = 4'b0110
+	PASS_CHG_1 = 4'b1010
+	PASS_CHG_2 = 4'b1001
+	PASS_CHG_3 = 4'b1000
+	PASS_ENT_1 = 4'b0011
+	PASS_ENT_2 = 4'b0010
+	PASS_ENT_3 = 4'b0001
+	PASS_NEW = 4'b1011
+	WARNING = 4'b0111
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 46: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 51: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 60: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 69: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 78: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 85: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 94: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 103: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 112: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 122: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 129: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 143: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 172: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 185: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 202: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 206: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 212: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 234: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 242: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 250: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 258: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 266: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 274: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 282: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 290: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 298: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 306: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 314: Size mismatch between case item and case selector.
+WARNING:Xst:2725 - "CS303_ERDEM_YILDIZ.v" line 449: Size mismatch between case item and case selector.
+Module <atm> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <clk_divider>.
+    Related source file is "clk_divider.v".
+    Found 1-bit register for signal <divided_clk>.
+    Found 25-bit up counter for signal <cnt>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <clk_divider> synthesized.
+
+
+Synthesizing Unit <debouncer>.
+    Related source file is "debouncer.v".
+    Found 1-bit register for signal <clean_out>.
+    Found 1-bit register for signal <clean_out_tmp1>.
+    Found 1-bit register for signal <clean_out_tmp2>.
+    Found 1-bit register for signal <noisy_in_reg>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <debouncer> synthesized.
+
+
+Synthesizing Unit <ssd>.
+    Related source file is "ssd.v".
+    Found 1-bit register for signal <a>.
+    Found 1-bit register for signal <b>.
+    Found 1-bit register for signal <c>.
+    Found 1-bit register for signal <d>.
+    Found 1-bit register for signal <e>.
+    Found 1-bit register for signal <f>.
+    Found 1-bit register for signal <g>.
+    Found 1-bit register for signal <an0>.
+    Found 1-bit register for signal <an1>.
+    Found 1-bit register for signal <an2>.
+    Found 1-bit register for signal <an3>.
+    Found 15-bit up counter for signal <counter>.
+    Found 3-bit up counter for signal <state>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  11 D-type flip-flop(s).
+Unit <ssd> synthesized.
+
+
+Synthesizing Unit <atm>.
+    Related source file is "CS303_ERDEM_YILDIZ.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <current_state> of Case statement line 45 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <current_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Using one-hot encoding for signal <current_state>.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <current_state> of Case statement line 233 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <current_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <current_state> of Case statement line 233 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <current_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <current_state> of Case statement line 233 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <current_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <current_state> of Case statement line 233 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <current_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <current_state> of Case statement line 233 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <current_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found 7-bit register for signal <digit1>.
+    Found 7-bit register for signal <digit2>.
+    Found 7-bit register for signal <digit3>.
+    Found 7-bit register for signal <digit4>.
+    Found 8-bit register for signal <LED>.
+    Found 16-bit register for signal <balance>.
+    Found 16-bit addsub for signal <balance$share0000>.
+    Found 7-bit register for signal <counter>.
+    Found 7-bit comparator less for signal <counter$cmp_lt0000> created at line 207.
+    Found 7-bit comparator less for signal <counter$cmp_lt0001> created at line 213.
+    Found 7-bit adder for signal <counter$share0000> created at line 170.
+    Found 12-bit register for signal <current_state>.
+    Found 4-bit comparator equal for signal <next_state$cmp_eq0000> created at line 52.
+    Found 16-bit comparator less for signal <next_state$cmp_lt0000> created at line 135.
+    Found 4-bit comparator not equal for signal <next_state$cmp_ne0000> created at line 54.
+    Found 4-bit register for signal <password>.
+    Summary:
+	inferred  63 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   5 Comparator(s).
+Unit <atm> synthesized.
+
+
+Synthesizing Unit <top_module>.
+    Related source file is "top_module.v".
+Unit <top_module> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 16-bit addsub                                         : 1
+ 7-bit adder                                           : 1
+# Counters                                             : 3
+ 15-bit up counter                                     : 1
+ 25-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 33
+ 1-bit register                                        : 24
+ 12-bit register                                       : 1
+ 16-bit register                                       : 1
+ 4-bit register                                        : 1
+ 7-bit register                                        : 5
+ 8-bit register                                        : 1
+# Comparators                                          : 5
+ 16-bit comparator less                                : 1
+ 4-bit comparator equal                                : 1
+ 4-bit comparator not equal                            : 1
+ 7-bit comparator less                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 16-bit addsub                                         : 1
+ 7-bit adder                                           : 1
+# Counters                                             : 3
+ 15-bit up counter                                     : 1
+ 25-bit up counter                                     : 1
+ 3-bit up counter                                      : 1
+# Registers                                            : 99
+ Flip-Flops                                            : 99
+# Comparators                                          : 5
+ 16-bit comparator less                                : 1
+ 4-bit comparator equal                                : 1
+ 4-bit comparator not equal                            : 1
+ 7-bit comparator less                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <top_module> ...
+
+Optimizing unit <ssd> ...
+
+Optimizing unit <atm> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top_module, actual ratio is 16.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 142
+ Flip-Flops                                            : 142
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top_module.ngr
+Top Level Output File Name         : top_module
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 56
+
+Cell Usage :
+# BELS                             : 414
+#      GND                         : 1
+#      INV                         : 5
+#      LUT1                        : 39
+#      LUT2                        : 50
+#      LUT2_D                      : 3
+#      LUT2_L                      : 7
+#      LUT3                        : 42
+#      LUT3_D                      : 7
+#      LUT3_L                      : 8
+#      LUT4                        : 104
+#      LUT4_D                      : 5
+#      LUT4_L                      : 9
+#      MUXCY                       : 67
+#      MUXF5                       : 10
+#      VCC                         : 1
+#      XORCY                       : 56
+# FlipFlops/Latches                : 142
+#      FDC                         : 83
+#      FDCE                        : 22
+#      FDE                         : 7
+#      FDP                         : 1
+#      FDR                         : 15
+#      FDRE                        : 3
+#      FDS                         : 11
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 55
+#      IBUF                        : 8
+#      OBUF                        : 47
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100etq144-4 
+
+ Number of Slices:                      148  out of    960    15%  
+ Number of Slice Flip Flops:            142  out of   1920     7%  
+ Number of 4 input LUTs:                279  out of   1920    14%  
+ Number of IOs:                          56
+ Number of bonded IOBs:                  56  out of    108    51%  
+ Number of GCLKs:                         2  out of     24     8%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 55    |
+clock_scaler/divided_clk1          | BUFG                   | 87    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | IBUF                   | 106   |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.514ns (Maximum Frequency: 153.516MHz)
+   Minimum input arrival time before clock: 6.825ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.514ns (frequency: 153.516MHz)
+  Total number of paths / destination ports: 1419 / 74
+-------------------------------------------------------------------------
+Delay:               6.514ns (Levels of Logic = 3)
+  Source:            display/counter_5 (FF)
+  Destination:       display/counter_14 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: display/counter_5 to display/counter_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.591   0.622  display/counter_5 (display/counter_5)
+     LUT3:I0->O            1   0.704   0.595  display/counter_or000014 (display/counter_or000014)
+     LUT4:I0->O            4   0.704   0.666  display/counter_or0000162 (display/state_cmp_eq0001)
+     LUT2:I1->O           15   0.704   1.017  display/counter_or00002 (display/counter_or0000)
+     FDR:R                     0.911          display/counter_0
+    ----------------------------------------
+    Total                      6.514ns (3.614ns logic, 2.900ns route)
+                                       (55.5% logic, 44.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock_scaler/divided_clk1'
+  Clock period: 6.335ns (frequency: 157.853MHz)
+  Total number of paths / destination ports: 1476 / 101
+-------------------------------------------------------------------------
+Delay:               6.335ns (Levels of Logic = 10)
+  Source:            machine/balance_0 (FF)
+  Destination:       machine/current_state_6 (FF)
+  Source Clock:      clock_scaler/divided_clk1 rising
+  Destination Clock: clock_scaler/divided_clk1 rising
+
+  Data Path: machine/balance_0 to machine/current_state_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             9   0.591   0.899  machine/balance_0 (machine/balance_0)
+     LUT2:I1->O            1   0.704   0.000  machine/Mcompar_next_state_cmp_lt0000_lut<0> (machine/Mcompar_next_state_cmp_lt0000_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<0> (machine/Mcompar_next_state_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<1> (machine/Mcompar_next_state_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<2> (machine/Mcompar_next_state_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<3> (machine/Mcompar_next_state_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<4> (machine/Mcompar_next_state_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<5> (machine/Mcompar_next_state_cmp_lt0000_cy<5>)
+     MUXCY:CI->O          18   0.459   1.072  machine/Mcompar_next_state_cmp_lt0000_cy<6> (machine/Mcompar_next_state_cmp_lt0000_cy<6>)
+     LUT4_L:I3->LO         1   0.704   0.135  machine/next_state<6>20 (machine/next_state<6>20)
+     LUT3:I2->O            1   0.704   0.000  machine/next_state<6>29 (machine/next_state<6>)
+     FDC:D                     0.308          machine/current_state_6
+    ----------------------------------------
+    Total                      6.335ns (4.229ns logic, 2.106ns route)
+                                       (66.8% logic, 33.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock_scaler/divided_clk1'
+  Total number of paths / destination ports: 176 / 39
+-------------------------------------------------------------------------
+Offset:              6.825ns (Levels of Logic = 11)
+  Source:            SW<0> (PAD)
+  Destination:       machine/current_state_6 (FF)
+  Destination Clock: clock_scaler/divided_clk1 rising
+
+  Data Path: SW<0> to machine/current_state_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.218   0.762  SW_0_IBUF (SW_0_IBUF)
+     LUT2:I0->O            1   0.704   0.000  machine/Mcompar_next_state_cmp_lt0000_lut<0> (machine/Mcompar_next_state_cmp_lt0000_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<0> (machine/Mcompar_next_state_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<1> (machine/Mcompar_next_state_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<2> (machine/Mcompar_next_state_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<3> (machine/Mcompar_next_state_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<4> (machine/Mcompar_next_state_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  machine/Mcompar_next_state_cmp_lt0000_cy<5> (machine/Mcompar_next_state_cmp_lt0000_cy<5>)
+     MUXCY:CI->O          18   0.459   1.072  machine/Mcompar_next_state_cmp_lt0000_cy<6> (machine/Mcompar_next_state_cmp_lt0000_cy<6>)
+     LUT4_L:I3->LO         1   0.704   0.135  machine/next_state<6>20 (machine/next_state<6>20)
+     LUT3:I2->O            1   0.704   0.000  machine/next_state<6>29 (machine/next_state<6>)
+     FDC:D                     0.308          machine/current_state_6
+    ----------------------------------------
+    Total                      6.825ns (4.856ns logic, 1.969ns route)
+                                       (71.2% logic, 28.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 29 / 29
+-------------------------------------------------------------------------
+Offset:              5.316ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       display/counter_14 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to display/counter_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           122   1.218   1.466  rst_IBUF (rst_IBUF)
+     LUT2:I0->O           15   0.704   1.017  display/counter_or00002 (display/counter_or0000)
+     FDR:R                     0.911          display/counter_0
+    ----------------------------------------
+    Total                      5.316ns (2.833ns logic, 2.483ns route)
+                                       (53.3% logic, 46.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            display/a (FF)
+  Destination:       a (PAD)
+  Source Clock:      clk rising
+
+  Data Path: display/a to a
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              1   0.591   0.420  display/a (display/a)
+     OBUF:I->O                 3.272          a_OBUF (a)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock_scaler/divided_clk1'
+  Total number of paths / destination ports: 36 / 36
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            machine/digit1_6 (FF)
+  Destination:       digit1<6> (PAD)
+  Source Clock:      clock_scaler/divided_clk1 rising
+
+  Data Path: machine/digit1_6 to digit1<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.447  machine/digit1_6 (machine/digit1_6)
+     OBUF:I->O                 3.272          digit1_6_OBUF (digit1<6>)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.56 secs
+ 
+--> 
+
+Total memory usage is 4521880 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   29 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

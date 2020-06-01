@@ -1,0 +1,5 @@
+verilog work "ssd.v"
+verilog work "debouncer.v"
+verilog work "CS303_ERDEM_YILDIZ.v"
+verilog work "clk_divider.v"
+verilog work "top_module.v"

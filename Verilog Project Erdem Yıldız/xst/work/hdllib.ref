@@ -1,0 +1,6 @@
+MO atm NULL CS303_ERDEM_YILDIZ.v vlg2A/atm.bin 1576685079
+MO clk_divider NULL clk_divider.v vlg70/clk__divider.bin 1576685079
+MO top_module NULL top_module.v vlg2C/top__module.bin 1576685079
+MO ssd NULL ssd.v vlg5E/ssd.bin 1576685079
+MO atm_test NULL atm_test.v vlg55/atm__test.bin 1576678247
+MO debouncer NULL debouncer.v vlg03/debouncer.bin 1576685079

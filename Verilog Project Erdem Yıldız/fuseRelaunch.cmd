@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "C:/.Xilinx/CS303_ERDEMYILDIZ/atm_test_isim_beh.exe" -prj "C:/.Xilinx/CS303_ERDEMYILDIZ/atm_test_beh.prj" "work.atm_test" "work.glbl" 
